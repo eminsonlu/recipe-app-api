@@ -1,3 +1,4 @@
 Django>=4.0
 djangorestframework>=3.12.4
 psycopg2>=2.9
+drf-spectacular>=0.15.1

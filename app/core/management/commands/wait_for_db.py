@@ -11,7 +11,9 @@ from django.core.management.base import BaseCommand
 
 
 class Command(BaseCommand):
+    """Django command to pause execution until database is available"""
     def handle(self, *args, **options):
+        """Handle the command"""
         self.stdout.write("Waiting for database...")
         db_up = False
 
