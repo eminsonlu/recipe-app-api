@@ -21,7 +21,10 @@ def create_user(**params):
 
 
 class PublicUserApiTests(TestCase):
-    """Test the public features of the user api which is dont require authentication token like registration"""
+    """
+    Test the public features of the user api
+    which is dont require authentication token like registration
+    """
 
     def setUp(self):
         self.client = APIClient()
@@ -135,7 +138,7 @@ class PrivateUserApiTests(TestCase):
         """Test retrievent profile for authenticated user"""
         res = self.client.get(ME_URL)
 
-        self.assertEqual(res.status_code,status.HTTP_200_OK)
+        self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(
             res.data,
             {

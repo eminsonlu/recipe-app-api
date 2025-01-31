@@ -24,6 +24,7 @@ def detail_url(recipe_id):
     """Create and return a recipe detail URL"""
     return reverse('recipe:recipe-detail', args=[recipe_id])
 
+
 def create_recipe(user, **params):
     """Create and return sample recipe"""
     defaults = {
@@ -37,6 +38,7 @@ def create_recipe(user, **params):
 
     recipe = Recipe.objects.create(user=user, **defaults)
     return recipe
+
 
 def create_user(**params):
     """Create and return a new user."""
@@ -119,6 +121,7 @@ class PrivateRecipeAPITests(TestCase):
         for k, v in payload.items():
             self.assertEqual(getattr(recipe, k), v)
         self.assertEqual(recipe.user, self.user)
+
     def test_partial_update(self):
         """Test partial update of a recipe."""
         original_link = 'https://example.com/recipe.pdf'
