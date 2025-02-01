@@ -24,6 +24,7 @@ from rest_framework.permissions import (
 from core.models import Recipe, Tag, Ingredient
 from recipe import serializers
 
+
 @extend_schema_view(
     list=extend_schema(
         parameters=[
@@ -35,7 +36,7 @@ from recipe import serializers
             OpenApiParameter(
                 name="ingredients",
                 type=OpenApiTypes.STR,
-                description="Filter recipes by ingredients comma seperated IDs",
+                description="Filter recipes by ingredients comma seperated IDs", # noqa
             ),
         ]
     )
@@ -94,6 +95,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
             serializer.errors,
             status=status.HTTP_400_BAD_REQUEST
         )
+
 
 @extend_schema_view(
     list=extend_schema(

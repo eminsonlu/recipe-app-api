@@ -413,8 +413,8 @@ class PrivateRecipeAPITests(TestCase):
         """Test filtering recipes by ingredients"""
         recipe1 = create_recipe(user=self.user, title='Recipe 1')
         recipe2 = create_recipe(user=self.user, title='Recipe 2')
-        ingredient1 = Ingredient.objects.create(user=self.user, name='Ingredient 1')
-        ingredient2 = Ingredient.objects.create(user=self.user, name='Ingredient 2')
+        ingredient1 = Ingredient.objects.create(user=self.user, name='Ingredient 1') # noqa
+        ingredient2 = Ingredient.objects.create(user=self.user, name='Ingredient 2') # noqa
         recipe1.ingredients.add(ingredient1)
         recipe2.ingredients.add(ingredient2)
         recipe3 = create_recipe(user=self.user, title='Recipe 3')
